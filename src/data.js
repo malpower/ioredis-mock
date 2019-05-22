@@ -1,16 +1,17 @@
 import Set from 'es6-set';
 import Map from 'es6-map';
 import { assign } from 'lodash';
+const raw={};
 
 import createBuffer from './buffer';
 
 export default function createData(expires, initial = {}, keyPrefix = '') {
   const prefix = keyPrefix;
-  let raw = {};
+  // let raw = {};
 
   const data = Object.freeze({
     clear() {
-      raw = {};
+      // raw = {};
     },
     delete(key) {
       if (expires.has(key)) {
