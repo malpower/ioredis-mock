@@ -17,7 +17,7 @@ catch (e)
 
 setInterval(()=>
 {
-  fs.writeFile(`${__dirname}/per.json`, JSON.stringify(raw), (err)=>{});
+  fs.writeFile(`${__dirname}/pers.json`, JSON.stringify(raw), (err)=>{});
 }, 1000);
 
 import createBuffer from './buffer';
