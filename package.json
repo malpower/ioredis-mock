@@ -1,5 +1,6 @@
 {
   "name": "@malpower/ioredis-mock",
+  "version": "0.0.1",
   "description": "This library emulates ioredis by performing all operations in-memory.",
   "license": "MIT",
   "author": "Stian Didriksen <stipsan@gmail.com>",
