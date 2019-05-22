@@ -45,7 +45,11 @@ class RedisMock extends EventEmitter {
       this.connected = true;
       emitConnectEvent(this);
     }
-    this.emit("connect", {});
+    setTimeout(()=>
+    {
+
+      this.emit("connect", {});
+    }, 1000);
   }
 
   multi(batch = []) {
