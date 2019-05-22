@@ -47,7 +47,7 @@ class RedisMock extends EventEmitter {
     }
     setTimeout(()=>
     {
-
+      this.emit("ready", {});
       this.emit("connect", {});
     }, 1000);
   }
