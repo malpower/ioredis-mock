@@ -1,24 +1,9 @@
 import Set from 'es6-set';
 import Map from 'es6-map';
 import { assign } from 'lodash';
-import * as fs from "fs";
+import {persistence} from "@malpower/persist-obj-provider";
 
-let raw;
-try
-{
-  let persistence=fs.readFileSync(`pers.json`);
-  persistence=JSON.parse(persistence.toString("utf8"));
-  raw=persistence;
-}
-catch (e)
-{
-  raw={};
-}
-
-setInterval(()=>
-{
-  fs.writeFile(`pers.json`, JSON.stringify(raw), (err)=>{});
-}, 1000);
+const raw=persistence;
 
 import createBuffer from './buffer';
 

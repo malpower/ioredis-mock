@@ -10,6 +10,7 @@ import Pipeline from './pipeline';
 import promiseContainer from './promise-container';
 import parseKeyspaceEvents from './keyspace-notifications';
 
+
 const defaultOptions = {
   data: {},
   keyPrefix: '',
