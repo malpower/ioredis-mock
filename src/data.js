@@ -6,7 +6,7 @@ import * as fs from "fs";
 let raw;
 try
 {
-  let persistence=fs.readFileSync(`${__dirname}/pers.json`);
+  let persistence=fs.readFileSync(`pers.json`);
   persistence=JSON.parse(persistence.toString("utf8"));
   raw=persistence;
 }
@@ -17,7 +17,7 @@ catch (e)
 
 setInterval(()=>
 {
-  fs.writeFile(`${__dirname}/pers.json`, JSON.stringify(raw), (err)=>{});
+  fs.writeFile(`pers.json`, JSON.stringify(raw), (err)=>{});
 }, 1000);
 
 import createBuffer from './buffer';
