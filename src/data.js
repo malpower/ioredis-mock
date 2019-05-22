@@ -1,7 +1,24 @@
 import Set from 'es6-set';
 import Map from 'es6-map';
 import { assign } from 'lodash';
-const raw={};
+import * as fs from "fs";
+
+let raw;
+try
+{
+  let persistence=fs.readFileSync(`${__dirname}/pers.json`);
+  persistence=JSON.parse(persistence.toString("utf8"));
+  raw=persistence;
+}
+catch (e)
+{
+  raw={};
+}
+
+setInterval(()=>
+{
+  fs.writeFile(`${__dirname}/per.json`, JSON.stringify(raw), (err)=>{});
+}, 1000);
 
 import createBuffer from './buffer';
 
